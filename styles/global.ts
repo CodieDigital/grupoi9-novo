@@ -1,14 +1,29 @@
-import { createGlobalStyle } from 'styled-components';
+import { createGlobalStyle } from "styled-components";
 
 export const GlobalStyle = createGlobalStyle`
-html {
-  scroll-behavior: smooth !important;
-  font-size: 10px !important;
-}
+  :root {
+    --primary-color: #12b2ad;
+    --secondary-color: #2508a1;
+    --tertiary-color: #c9e9ee;
+    --text-color: #333;
 
-body {
-  background-size: cover;
-  overflow-x: hidden !important;
+    --button-color-bg: #fff;
+    --button-color-no-bg: #fff;
+    --button-color-bg-hover: #000;
+    --button-color-no-bg-hover: #000;
+
+    --bt-linear-gradient-1: #d99749;
+    --bt-linear-gradient-2: #f1c36b;
+  }
+
+  html {
+    scroll-behavior: smooth !important;
+    font-size: 10px;
+  }
+
+  body {
+    background-color: #f7f8fa;
+    overflow-x: hidden !important;
 
     &::-webkit-scrollbar {
       width: 7px;
@@ -19,125 +34,162 @@ body {
     }
 
     &::-webkit-scrollbar-thumb {
-      background: ${(props) => props.theme.primaryColor};
+      background: var(--primary-color);
     }
 
     &::-webkit-scrollbar-thumb:hover {
-      background: ${(props) => props.theme.secondaryColor};
+      background: var(--secondary-color);
     }
-}
-
-*:focus {
-  outline: transparent !important;
-}
-
-a,
-button {
-  cursor: pointer;
-  text-decoration: none !important;
-  transition: 0.25s;
-}
-
-a:hover,
-button:hover {
-  transition: 0.25s;
-}
-
-a::after,
-a::before {
-  transition: 0.3s;
-}
-
-a:hover::after,
-a:hover::before {
-  transition: 0.3s;
-}
-
-ol,
-ul {
-  list-style: none !important;
-  padding-left: 0 !important;
-  margin-bottom: 0 !important;
-}
-
-.container-codie {
-  max-width: 0;
-  width: 100%;
-  padding-left: 15px;
-  padding-right: 15px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.loader-router {
-  width: 100%;
-  position: fixed;
-  top: 0;
-  left: 0;
-  height: 5px;
-  animation-duration: 1.8s;
-  animation-fill-mode: forwards;
-  animation-iteration-count: infinite;
-  animation-name: placeHolderShimmer;
-  animation-timing-function: linear;
-  background:  ${(props) => props.theme.primaryColor};
-  background: ${(props) => `linear-gradient(
-  to right,
-  ${props.theme.primaryColor} 8%,
-  ${props.theme.secondaryColor + '5a'} 25%,
-  ${props.theme.primaryColor} 33%
-  )`} ;
-    position: fixed;
-    top: 0;
-    right: 0;
-    z-index: 99;
-}
-
-@media only screen and (max-width: 1600px) {
-  .container {
-    max-width: 0;
   }
-}
 
-@media only screen and (max-width: 1400px) {
-  .container {
-    max-width: 0;
+  p,
+  .description, .text {
+    color: var(--text-color);
+    text-align: justify;
   }
-}
 
-@media only screen and (max-width: 1200px) {
-  .container {
-    max-width: 0;
+  .CookieConsent{
+    padding-right: 85px;
   }
-}
 
-@media only screen and (max-width: 1024px) {
-  .container {
-    max-width: 0;
-  }
-}
+  /* .description {
+    padding-right: 5px;
+    overflow-y: auto;
 
-@media only screen and (max-width: 900px) {
-  .container {
-    max-width: 0;
+    &::-webkit-scrollbar {
+      width: 3px;
+      border-radius: 10px;
+    }
+
+    &::-webkit-scrollbar-track {
+      background: #ccc;
+      border-radius: 10px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background: var(--primary-color);
+      border-radius: 10px;
+    }
+
+    &::-webkit-scrollbar-thumb:hover {
+      background: var(--primary-color);
+    }
+  } */
+
+  .line {
+    height: 8px;
   }
 
   .error-message {
-    font-size: 12px;
-    margin-top: 4px;
-    padding-left: 10px;
+    font-size: 13px;
+    color: #db3232;
+    text-align: left;
+    margin-top: 5px;
   }
-}
 
-@media only screen and (max-width: 768px) {
   .container {
-    max-width: 0;
+    max-width: 1545px;
+    width: 100%;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: auto;
+    margin-right: auto;
   }
-}
 
-@media only screen and (max-width: 650px) {
-  .container {
-    max-width: 0;
+  section {
+    padding: 80px 0;
   }
-}
+
+  .cookies-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 24px !important;
+    background-size: 300% !important;
+    background-position: left !important;
+    transition: all 0.4s ease-in-out !important;
+    color: var(--button-color-bg) !important;
+    border: none;
+    background-image: linear-gradient(99deg, var(--bt-linear-gradient-1) 0%, var(--bt-linear-gradient-2) 33%, var(--bt-linear-gradient-1) 67%, var(--bt-linear-gradient-2)) !important;
+    padding: 9px 18px !important;
+
+    &:hover {
+      background-position: right !important;
+      color: var(--button-color-bg-hover) !important;
+    }
+  }
+
+  @media only screen and (max-width: 1600px) {
+    .container {
+      max-width: 1330px;
+    }
+
+    section {
+      padding: 70px 0;
+    }
+  }
+
+  @media only screen and (max-width: 1400px) {
+    .container {
+      max-width: 1150px;
+    }
+
+    section {
+      padding: 50px 0;
+    }
+  }
+
+  @media only screen and (max-width: 1200px) {
+    .container {
+      max-width: 990px;
+    }
+
+    section {
+      padding: 40px 0;
+    }
+  }
+
+  @media only screen and (max-width: 1024px) {
+    .container {
+      max-width: 870px;
+    }
+
+    section {
+      padding: 35px 0;
+    }
+  }
+
+  @media only screen and (max-width: 900px) {
+    .container {
+      max-width: 735px;
+    }
+
+    .error-message {
+      font-size: 12px;
+      margin-top: 4px;
+      padding-left: 10px;
+    }
+  }
+
+  @media only screen and (max-width: 768px) {
+    .container {
+      max-width: 625px;
+    }
+
+    section {
+      padding: 30px 0;
+    }
+  }
+
+  @media only screen and (max-width: 650px) {
+    .container {
+      max-width: 495px;
+    }
+  }
+
+  @media only screen and (max-width: 500px) {
+    section {
+      padding: 25px 0;
+    }
+  }
 `;
