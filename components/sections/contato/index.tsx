@@ -1,8 +1,9 @@
+import { Container } from "codiedigital";
+
 import { useI18n } from "src/contexts/i18n";
 
 import { contactList } from "src/localData/data";
 
-import { Container } from "components/data";
 import { FormContact } from "./form-contact";
 
 import * as S from "./styles";

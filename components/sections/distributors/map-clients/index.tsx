@@ -1,10 +1,9 @@
 import { useState } from "react";
 
-import { Icon } from "codiedigital";
+import { Icon, Container } from "codiedigital";
 
 import { useI18n } from "src/contexts/i18n";
 
-import { Container } from "components/data";
 import { BrazilMapIcon } from "components/icons/Brazil-map";
 
 import { IShopList } from "src/interfaces/shops";

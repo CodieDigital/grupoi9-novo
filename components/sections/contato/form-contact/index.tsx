@@ -4,7 +4,7 @@ import router from "next/router";
 
 import ReCAPTCHA from "react-google-recaptcha";
 
-import { api } from "src/services/api";
+import { api } from "codiedigital";
 import { useI18n } from "src/contexts/i18n";
 
 import { Form, FormHandles, YupValidation } from "components/inputs";

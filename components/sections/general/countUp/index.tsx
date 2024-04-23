@@ -1,9 +1,9 @@
 import CountUp from "react-countup";
 import VisibilitySensor from "react-visibility-sensor";
 
-import { useI18n } from "src/contexts/i18n";
-
 import { Container } from "codiedigital";
+
+import { useI18n } from "src/contexts/i18n";
 
 import { IPageInformations } from "src/interfaces/pageInformations";
 

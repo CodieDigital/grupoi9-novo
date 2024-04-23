@@ -1,5 +1,5 @@
-import Link from 'next/link';
-import styled from 'styled-components';
+import Link from "next/link";
+import styled from "styled-components";
 
 export const CardCampaing = styled(Link)`
   /* width: 100%; */
@@ -18,7 +18,7 @@ export const CardCampaing = styled(Link)`
   transition: all 0.3s ease-in-out;
 
   &::after {
-    content: '';
+    content: "";
     position: absolute;
     width: 100%;
     height: 100%;
@@ -50,10 +50,13 @@ export const CardCampaing = styled(Link)`
     transition: all 0.3s ease-in-out;
     width: 100%;
     height: 185px;
-    aspect-ratio: 228/200;
     position: absolute;
     top: 0;
     left: 0;
+
+    img {
+      aspect-ratio: 228/200;
+    }
   }
 
   .box-description {

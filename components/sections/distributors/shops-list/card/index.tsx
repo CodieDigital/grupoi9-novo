@@ -1,5 +1,4 @@
-import { Error } from "components/data";
-import { Icon } from "codiedigital";
+import { Icon, Error } from "codiedigital";
 
 import { IShopList } from "src/interfaces/shops";
 import { IRedesSociais } from "./interface";

@@ -3,8 +3,8 @@ import { useRouter } from "next/router";
 import { GetServerSideProps } from "next";
 
 import { useI18n } from "src/contexts/i18n";
-import { checkLanguage } from "src/utils/checkLanguage";
 import { getShopData } from "src/api-requisitions/shops";
+import { checkLanguage } from "src/utils/checkLanguage";
 import { getInternationalShopsData } from "src/api-requisitions/international-shops";
 
 import { Layout } from "components/layout";

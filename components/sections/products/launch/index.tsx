@@ -1,7 +1,8 @@
+import { Error, Container } from "codiedigital";
+
 import { useI18n } from "src/contexts/i18n";
 
 import { Card } from "components/cards";
-import { Container, Error } from "components/data";
 
 import { ILaunchs } from "src/interfaces/pageInformations";
 

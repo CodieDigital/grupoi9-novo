@@ -1,10 +1,10 @@
-import { Container, Error } from 'components/data';
+import { Error, Container } from "codiedigital";
 
-import * as S from './styles';
+import * as S from "./styles";
 
 export function VideoText({ data }: { data: { title: string; text: string } }) {
   return (
-    <Error name={'Video Text'}>
+    <Error name={"Video Text"}>
       <S.VideoText $hasText={!!data.title && !!data.text}>
         <Container>
           {data && data.title && data.text && (
@@ -13,7 +13,7 @@ export function VideoText({ data }: { data: { title: string; text: string } }) {
 
           <video
             controls
-            src={'/videos/video-products-new.mp4'}
+            src={"/videos/video-products-new.mp4"}
             className="video"
           ></video>
 

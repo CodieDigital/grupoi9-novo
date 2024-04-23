@@ -1,14 +1,8 @@
-import { SwiperSlide } from "swiper/react";
-
-import { Error, Carousel } from "codiedigital";
-
-import { BoxSwiper } from "codieweb/dist/cjs/components/data/box-swiper";
-import { NextImage } from "codieweb/dist/cjs/components/data/next-image";
-
-import { pathsApi } from "src/services/api";
-import { IIMagens } from "src/interfaces/pageInformations";
+import { Error, Carousel, NextImage } from "codiedigital";
 
 import { swiperConfigs } from "./swiperConfigs";
+
+import { IIMagens } from "src/interfaces/pageInformations";
 
 import * as S from "./styles";
 
@@ -19,9 +13,13 @@ interface IBanner {
 function Card(banner) {
   return (
     <NextImage
-      pathsApi={pathsApi}
-      isPortfolio
-      src={banner.tableId + "/" + banner.fileData}
+      src={
+        process.env.painelURL +
+        "imagens/Paginas/" +
+        banner.tableId +
+        "/" +
+        banner.fileData
+      }
     />
   );
 }

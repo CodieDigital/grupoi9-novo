@@ -1,7 +1,4 @@
-import { SwiperSlide } from "swiper/react";
-
-import { Container, Error } from "components/data";
-import { Carousel } from "codiedigital";
+import { Error, Carousel, Container } from "codiedigital";
 
 import { useI18n } from "src/contexts/i18n";
 

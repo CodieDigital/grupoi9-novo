@@ -2,13 +2,11 @@ import Head from "next/head";
 
 import { GetServerSideProps } from "next";
 
-import { BlogContent } from "codiedigital";
+import { api, Error, BlogContent } from "codiedigital";
 
-import { api } from "src/services/api";
 import { useI18n } from "src/contexts/i18n";
 import { checkLanguage } from "src/utils/checkLanguage";
 
-import { Error } from "components/data";
 import { Layout } from "components/layout";
 
 import { IBlogCategories } from "src/interfaces/blog-categories";

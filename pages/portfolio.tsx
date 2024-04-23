@@ -1,21 +1,19 @@
 import { GetServerSideProps } from "next";
 
-import { HeadComponent } from "codieweb/dist/cjs/components/data/head";
+import { HeadComponent } from "codiedigital";
 import { Button } from "codieweb/dist/cjs/components/data/simple-button";
 
-import { painelURL, pathsApi } from "src/services/api";
 import { useI18n } from "src/contexts/i18n";
-
-import { Layout } from "components/layout";
 import { checkLanguage } from "src/utils/checkLanguage";
 import { getProductsData } from "src/api-requisitions/products";
+
 import {
   Banner,
   Launch,
   VideoText,
   ProductsList,
 } from "components/sections/products";
-
+import { Layout } from "components/layout";
 import { VideoImageText } from "components/sections/general";
 
 import { IPageInformations } from "src/interfaces/pageInformations";
@@ -42,7 +40,7 @@ export default function ProductsPage({
   return (
     <Layout>
       {pageContent && pageContent.head && (
-        <HeadComponent painel={painelURL} headContent={pageContent.head} />
+        <HeadComponent headContent={pageContent.head} />
       )}
 
       {pageContent && pageContent.imagens && pageContent.imagens.length > 0 && (
