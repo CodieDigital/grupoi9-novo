@@ -1,12 +1,10 @@
-import { NextImage } from 'codieweb/dist/cjs/components/data/next-image';
+import { NextImage } from "codiedigital";
 
-import { pathsApi } from 'src/services/api';
+import { Container, Error } from "components/data";
 
-import { Container, Error } from 'components/data';
+import { IPageInformations } from "src/interfaces/pageInformations";
 
-import { IPageInformations, ISobre } from 'src/interfaces/pageInformations';
-
-import * as S from './styles';
+import * as S from "./styles";
 
 interface ITextImage {
   data: IPageInformations;
@@ -103,23 +101,15 @@ export function TextImage({ data }: ITextImage) {
           {(data.imagem1 || data.imagem2) && (
             <div className="box-right">
               {data.imagem1 && (
-                <NextImage
-                  pathsApi={pathsApi}
-                  className="leafs"
-                  isUploads
-                  src={data.imagem1}
-                  hasAos
-                />
+                <div className="leafs">
+                  <NextImage src={data.imagem1} baseImage />
+                </div>
               )}
 
               {data.imagem2 && (
-                <NextImage
-                  pathsApi={pathsApi}
-                  className="photo"
-                  src={data.imagem2}
-                  isUploads
-                  hasAos
-                />
+                <div className="photo">
+                  <NextImage src={data.imagem2} baseImage />
+                </div>
               )}
             </div>
           )}

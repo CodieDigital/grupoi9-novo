@@ -9,7 +9,7 @@ export interface ICardProps {
 }
 
 export interface IRedesSociais {
-  url: string;
+  url?: string;
   name: string;
   icon: IconsNames;
 }

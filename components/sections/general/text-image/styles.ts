@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 interface ITextImageStyles {}
 
@@ -8,6 +8,7 @@ export const TextImage = styled.section<ITextImageStyles>`
   .container {
     display: flex;
     justify-content: space-between;
+    gap: 20px;
   }
 
   .box-left,
@@ -17,9 +18,6 @@ export const TextImage = styled.section<ITextImageStyles>`
     align-items: center;
     flex-direction: column;
     gap: 30px;
-  }
-
-  .box-left {
   }
 
   .box-text {

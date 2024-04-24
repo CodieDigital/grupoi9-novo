@@ -43,15 +43,15 @@ export function Card({
       <S.Card className="shop-card">
         {titulo && (
           <div className="title-shop">
-            <h3 className="title-5-bold uppercase">{titulo}</h3>
+            <h3 className="paragraph-1-bold uppercase">{titulo}</h3>
           </div>
         )}
-
+        {/* 
         {endereco && (
           <div className="street">
             <span className="paragraph-1-regular">{endereco}</span>
           </div>
-        )}
+        )} */}
 
         <div className="contact-box">
           {telefone && (

@@ -15,9 +15,13 @@ export const Card = styled.div`
     font-family: "LATO";
   }
 
+  .title-shop + * {
+    margin-top: 25px;
+  }
+
   .street {
     text-align: center;
-    margin: clamp(8px, 0.572917vw, 11px) 0;
+    margin-bottom: clamp(8px, 0.572917vw, 11px) 0;
     overflow: hidden;
     display: -webkit-box;
     -webkit-line-clamp: 2;
@@ -57,7 +61,7 @@ export const Card = styled.div`
     gap: 15px;
     align-items: center;
     justify-content: center;
-    margin-top: 25px;
+    margin-top: 15px;
 
     a {
       color: #000;

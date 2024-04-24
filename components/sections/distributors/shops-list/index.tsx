@@ -3,35 +3,28 @@ import { useI18n } from "src/contexts/i18n";
 import { Card } from "./card";
 import { Container, Error } from "codiedigital";
 
-import { IShopList } from "src/interfaces/shops";
+import { IShopsListProps } from "./interface";
 
 import * as S from "./styles";
 
-export function ShopsList({
-  data,
-  isBrazil = false,
-}: {
-  data?: IShopList[];
-  isBrazil?: boolean;
-}) {
-  const { translate } = useI18n();
+export function ShopsList({ title, data }: IShopsListProps) {
+  const { translate, locale } = useI18n();
+  const isBrazil = locale === "pt";
 
   return (
     <Error name="ShopsList">
       <S.ShopsList>
-        {!isBrazil && (
-          <div className="titles">
-            <h1 className="title-1-avianoFlare">
-              {translate.dictionary["nossos-distribuidores"]}
-            </h1>
+        <div className="titles">
+          <h1 className="title-1-avianoFlare">
+            {title || translate.dictionary["nossos-distribuidores"]}
+          </h1>
 
-            {(!data || data.length === 0) && (
-              <p className="paragraph-2 text">
-                {translate.dictionary["nenhum-distribuidor-encontrado"]}
-              </p>
-            )}
-          </div>
-        )}
+          {!isBrazil && (!data || data.length === 0) && (
+            <p className="paragraph-2 text">
+              {translate.dictionary["nenhum-distribuidor-encontrado"]}
+            </p>
+          )}
+        </div>
 
         <Container>
           {data && data.length > 0 && (
@@ -42,13 +35,15 @@ export function ShopsList({
                 </h2>
               )}
 
-              {data.map((distributor) => (
-                <div key={"content" + distributor.id} className="shops-box">
-                  {data.map((cardData) => (
-                    <Card key={"shop-card" + cardData.id} {...cardData} />
-                  ))}
-                </div>
-              ))}
+              <div className="shops-list">
+                {data.map((distributor) => (
+                  <div key={"content" + distributor.id} className="shops-box">
+                    {data.map((cardData) => (
+                      <Card key={"shop-card" + cardData.id} {...cardData} />
+                    ))}
+                  </div>
+                ))}
+              </div>
             </div>
           )}
         </Container>

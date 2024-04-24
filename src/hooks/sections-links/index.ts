@@ -1,7 +1,7 @@
-import useSWR from 'swr';
+import useSWR from "swr";
 
-import { api } from 'src/services/api';
-import { IPageInformations } from 'src/interfaces/pageInformations';
+import { api } from "codiedigital";
+import { IPageInformations } from "src/interfaces/pageInformations";
 
 export function linksSections() {
   const fetcherLinks = () => api.get<IPageInformations>(`pages/home`);

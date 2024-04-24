@@ -41,7 +41,10 @@ export default function Distributors({
           <>
             <MapClients shopList={shopList.items} />
 
-            <ShopsList data={internationalShopList.items} isBrazil />
+            <ShopsList
+              title="Nossos Distribuidores Internacionais"
+              data={internationalShopList.items}
+            />
           </>
         ) : (
           <ShopsList data={shopList.items} />

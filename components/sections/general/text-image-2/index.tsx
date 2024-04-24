@@ -1,12 +1,10 @@
-import { NextImage } from 'codieweb/dist/cjs/components/data/next-image';
+import { NextImage } from "codiedigital";
 
-import { pathsApi } from 'src/services/api';
+import { Container } from "components/data";
 
-import { Container } from 'components/data';
+import { IPageInformations } from "src/interfaces/pageInformations";
 
-import { IPageInformations } from 'src/interfaces/pageInformations';
-
-import * as S from './styles';
+import * as S from "./styles";
 
 export function TextImage2({ data }: { data: IPageInformations }) {
   return (
@@ -61,13 +59,9 @@ export function TextImage2({ data }: { data: IPageInformations }) {
         </div>
 
         {data.imagemSessao2 && (
-          <NextImage
-            pathsApi={pathsApi}
-            className="image"
-            isUploads
-            src={data.imagemSessao2}
-            hasAos
-          />
+          <div className="image">
+            <NextImage src={data.imagemSessao2} baseImage />
+          </div>
         )}
       </Container>
     </S.TextImage2>
