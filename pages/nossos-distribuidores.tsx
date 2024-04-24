@@ -1,5 +1,6 @@
 import Head from "next/head";
 import { useRouter } from "next/router";
+import { useHeader } from "codiedigital";
 import { GetServerSideProps } from "next";
 
 import { useI18n } from "src/contexts/i18n";
@@ -12,9 +13,19 @@ import { ShopsList, MapClients } from "components/sections/distributors";
 
 import { IShops } from "src/interfaces/shops";
 
-export default function Distributors({ shopList }: { shopList: IShops }) {
+import * as S from "styles/pages/nossos-distribuidores";
+
+export default function Distributors({
+  shopList,
+  internationalShopList,
+}: {
+  shopList: IShops;
+  internationalShopList?: any;
+}) {
   const { translate, locale } = useI18n();
+
   const router = useRouter();
+  const { headerHeight } = useHeader();
 
   return (
     <Layout noBg>
@@ -25,11 +36,17 @@ export default function Distributors({ shopList }: { shopList: IShops }) {
         <link rel="canonical" href={router.pathname} />
       </Head>
 
-      {locale === "pt" ? (
-        <MapClients shopList={shopList.items} />
-      ) : (
-        <ShopsList data={shopList.items} />
-      )}
+      <S.NossosDistribuidores style={{ marginTop: headerHeight }}>
+        {locale === "pt" ? (
+          <>
+            <MapClients shopList={shopList.items} />
+
+            <ShopsList data={internationalShopList.items} isBrazil />
+          </>
+        ) : (
+          <ShopsList data={shopList.items} />
+        )}
+      </S.NossosDistribuidores>
     </Layout>
   );
 }
@@ -37,14 +54,15 @@ export default function Distributors({ shopList }: { shopList: IShops }) {
 export const getServerSideProps: GetServerSideProps = async (ctx) => {
   const language = checkLanguage(ctx.query.lang as string);
 
-  const { shopData } =
-    language.lang !== "pt"
-      ? await getInternationalShopsData(language.id)
-      : await getShopData("GetAll");
+  const response =
+    language.lang === "pt"
+      ? await getShopData("GetAll")
+      : await getInternationalShopsData(language.id);
 
   return {
     props: {
-      shopList: shopData,
+      shopList: response?.shopData || {},
+      internationalShopList: response?.internationalShopData || {},
     },
   };
 };

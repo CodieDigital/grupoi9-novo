@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const MapClients = styled.section`
-  padding: 120px 0;
+  padding: 0 !important;
 
   a {
     color: #000;
@@ -31,6 +31,7 @@ export const MapClients = styled.section`
     justify-content: center;
     gap: 50px;
     align-items: flex-start;
+    margin-bottom: 0 !important;
   }
 
   .map-box {
@@ -112,13 +113,6 @@ export const MapClients = styled.section`
     }
   }
 
-  @media only screen and (max-width: 1400px) {
-    padding: 120px 0 60px;
-  }
-
-  @media only screen and (max-width: 1200px) {
-  }
-
   @media only screen and (max-width: 1024px) {
     .titles + * {
       margin-top: 50px;
@@ -159,7 +153,7 @@ export const MapClients = styled.section`
   }
 
   @media only screen and (max-width: 900px) {
-    padding: 100px 0 50px;
+    padding-top: 100px;
   }
 
   @media only screen and (max-width: 768px) {
@@ -182,9 +176,6 @@ export const MapClients = styled.section`
     }
   }
 
-  @media only screen and (max-width: 650px) {
-  }
-
   @media only screen and (max-width: 500px) {
     .titles + * {
       margin-top: 0;
@@ -193,8 +184,5 @@ export const MapClients = styled.section`
     .box-shops {
       grid-template-columns: 1fr;
     }
-  }
-
-  @media only screen and (max-width: 390px) {
   }
 `;

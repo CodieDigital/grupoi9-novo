@@ -10,21 +10,23 @@ import { IShopList } from "src/interfaces/shops";
 
 import * as S from "./styles";
 
-export function MapClients({ shopList }: { shopList: IShopList[] }) {
+export function MapClients({ shopList }: { shopList?: IShopList[] }) {
   const { translate } = useI18n();
 
   const [object, setObject] = useState<IShopList[]>([]);
   const [qnt, setQnt] = useState(0);
 
   const estados = {};
-  shopList.forEach((item) => {
+  shopList?.forEach((item) => {
     const estado = item.estadoTitle;
 
-    if (!estados[estado]) {
-      estados[estado] = [];
-    }
+    if (estado) {
+      if (!estados[estado]) {
+        estados[estado] = [];
+      }
 
-    estados[estado].push(item);
+      estados[estado].push(item);
+    }
   });
 
   const handleObject = (data) => setObject(data);
@@ -77,7 +79,7 @@ export function MapClients({ shopList }: { shopList: IShopList[] }) {
           )}
         </div>
 
-        {object && (
+        {object && object.length > 0 && (
           <div className="box-shops">
             {object.map((object, index) => (
               <div key={index} className="card">

@@ -1,5 +1,4 @@
 import axios from "axios";
-import { IPathsApi } from "codieweb/dist/cjs/components/data/next-image/interfaces";
 
 const siteUrl = "https://www.papelparamechas.com.br";
 

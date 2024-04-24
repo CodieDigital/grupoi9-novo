@@ -1,18 +1,23 @@
-import { api } from 'src/services/api';
+import { api } from "codiedigital";
+import { IGenericItem } from "src/interfaces/generic-item";
 
-import { ShopMockData } from 'src/mock-data/shop';
-import { IShops } from 'src/interfaces/shops';
+import { IShops } from "src/interfaces/shops";
 
-export async function getShopData(estado: string | string[] | undefined) {
+export async function getShopData(
+  estado: string | string[] | undefined
+): Promise<IGenericItem> {
   try {
-    const responseShopData = await api
-      .get<IShops>('Loja/list/' + estado)
-      .catch(() => ({ data: null }));
-    const shopData = responseShopData?.data || ShopMockData;
+    const [shopData, internationalShopData] = await Promise.all([
+      api.get<IShops>("Loja/list/" + estado),
+      api.get<IShops>("/Lojainternacional/listinternacional"),
+    ]);
 
-    return { shopData };
+    return {
+      shopData: shopData.data,
+      internationalShopData: internationalShopData.data,
+    };
   } catch (error: any) {
-    console.error('Erro ao obter os dados do Shop ', error);
-    return { shopData: ShopMockData };
+    console.error("Erro ao obter os dados do Shop ", error);
+    return { shopData: {}, internationalShopData: {} };
   }
 }

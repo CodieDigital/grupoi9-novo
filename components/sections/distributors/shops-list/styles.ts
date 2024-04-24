@@ -1,8 +1,8 @@
 import { styled } from "styled-components";
 
 export const ShopsList = styled.section`
-  padding: 120px 0;
   width: 100%;
+  padding: 0 !important;
 
   .text {
     text-align: center;
@@ -44,17 +44,9 @@ export const ShopsList = styled.section`
     }
   }
 
-  @media only screen and (max-width: 1400px) {
-    padding: 120px 0 60px;
-  }
-
   @media only screen and (max-width: 1024px) {
     .titles + * {
       margin-top: 50px;
     }
-  }
-
-  @media only screen and (max-width: 900px) {
-    padding: 100px 0 50px;
   }
 `;
