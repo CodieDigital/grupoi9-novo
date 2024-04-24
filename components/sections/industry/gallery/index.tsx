@@ -28,7 +28,7 @@ function CardLocalData({ image }: IData) {
 function CardApiData(image: IIMagens) {
   return (
     <div className="image">
-      <NextImage
+      <img
         src={
           process.env.painelURL +
           "imagens/Paginas/" +
@@ -36,6 +36,7 @@ function CardApiData(image: IIMagens) {
           "/" +
           image.fileData
         }
+        alt="Imagem"
       />
     </div>
   );

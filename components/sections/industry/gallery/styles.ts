@@ -13,6 +13,14 @@ export const Gallery = styled.section<IGalleryStyles>`
 
     img {
       object-fit: ${({ $isContain }) => ($isContain ? "contain" : "cover")};
+      width: 100%;
+      height: inherit;
+      min-height: inherit;
+      max-height: inherit;
+      min-width: inherit;
+      max-width: inherit;
+      object-position: center center;
+      aspect-ratio: inherit;
     }
   }
 
