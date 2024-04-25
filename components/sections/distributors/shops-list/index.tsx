@@ -38,9 +38,7 @@ export function ShopsList({ title, data }: IShopsListProps) {
               <div className="shops-list">
                 {data.map((distributor) => (
                   <div key={"content" + distributor.id} className="shops-box">
-                    {data.map((cardData) => (
-                      <Card key={"shop-card" + cardData.id} {...cardData} />
-                    ))}
+                    <Card key={"shop-card" + distributor.id} {...distributor} />
                   </div>
                 ))}
               </div>
