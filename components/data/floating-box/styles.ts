@@ -52,7 +52,7 @@ export const BoxFloating = styled.div<IBoxFloatingStyles>`
 
       svg {
         cursor: pointer;
-        width: 30px;
+        width: 25px;
         height: auto;
 
         &:hover {
