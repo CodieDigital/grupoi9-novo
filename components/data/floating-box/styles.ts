@@ -52,7 +52,7 @@ export const BoxFloating = styled.div<IBoxFloatingStyles>`
 
       svg {
         cursor: pointer;
-        width: 50px;
+        width: 30px;
         height: auto;
 
         &:hover {
@@ -164,14 +164,6 @@ export const BoxFloating = styled.div<IBoxFloatingStyles>`
     width: 28%;
     padding: 1.2%;
 
-    .box-children {
-      .link {
-        svg {
-          width: 40px;
-        }
-      }
-    }
-
     .number {
       font-size: 20px;
     }
@@ -223,14 +215,6 @@ export const BoxFloating = styled.div<IBoxFloatingStyles>`
     padding: 2%;
     top: 70px;
 
-    .box-children {
-      .link {
-        svg {
-          width: 40px;
-        }
-      }
-    }
-
     .open-button {
       max-width: 18px;
       left: -18px;
@@ -251,14 +235,6 @@ export const BoxFloating = styled.div<IBoxFloatingStyles>`
     max-width: 260px;
     padding: 3%;
     gap: 12px;
-
-    .box-children {
-      .link {
-        svg {
-          width: 30px;
-        }
-      }
-    }
 
     .box-text {
       gap: 12px;
