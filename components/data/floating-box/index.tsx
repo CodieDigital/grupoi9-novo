@@ -19,7 +19,7 @@ export function BoxFloating({
   modalPosition = "right",
   ...rest
 }: IBoxFloating) {
-  const { translate } = useI18n();
+  const { locale, translate } = useI18n();
   const [open, setOpen] = useState(false);
 
   function handleOpenBox() {
@@ -71,12 +71,14 @@ export function BoxFloating({
               }}
             />
 
-            <Button
-              className="link-1 button"
-              href="https://lojapapelparamechas.com.br"
-              text={translate.dictionary["quero-comprar"]}
-              target="_blank"
-            />
+            {locale === "pt" && (
+              <Button
+                className="link-1 button"
+                href="https://lojapapelparamechas.com.br"
+                text={translate.dictionary["quero-comprar"]}
+                target="_blank"
+              />
+            )}
           </div>
         </>
       )}

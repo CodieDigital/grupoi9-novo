@@ -32,7 +32,7 @@ interface HeaderProps {
 
 export function HeaderComponent({ data, noBg, fixed }: HeaderProps) {
   const [isActive, setIsActive] = useState(false);
-  const { translate, formatterTranslate } = useI18n();
+  const { locale, translate, formatterTranslate } = useI18n();
 
   const onClick = () => setIsActive(!isActive);
 
@@ -138,38 +138,44 @@ export function HeaderComponent({ data, noBg, fixed }: HeaderProps) {
             })}
           </nav>
 
-          <Button
-            buttonData={{
-              name: "bag show-1024",
-              icon: <BagIcon />,
-              text: translate.dictionary["loja"],
-              url: "https://lojapapelparamechas.com.br",
-              hasBg: true,
-              externalLink: true,
-            }}
-          />
+          {locale === "pt" && (
+            <>
+              <Button
+                buttonData={{
+                  name: "bag show-1024",
+                  icon: <BagIcon />,
+                  text: translate.dictionary["loja"],
+                  url: "https://lojapapelparamechas.com.br",
+                  hasBg: true,
+                  externalLink: true,
+                }}
+              />
 
-          <Button
-            buttonData={{
-              name: "bag show-500",
-              icon: <BagIcon />,
-              externalLink: true,
-              url: "https://lojapapelparamechas.com.br",
-              hasBg: true,
-            }}
-          />
+              <Button
+                buttonData={{
+                  name: "bag show-500",
+                  icon: <BagIcon />,
+                  externalLink: true,
+                  url: "https://lojapapelparamechas.com.br",
+                  hasBg: true,
+                }}
+              />
+            </>
+          )}
         </div>
 
-        <Button
-          buttonData={{
-            name: "bag hide-mobile",
-            icon: <BagIcon />,
-            text: translate.dictionary["loja"],
-            externalLink: true,
-            url: "https://lojapapelparamechas.com.br",
-            hasBg: true,
-          }}
-        />
+        {locale === "pt" && (
+          <Button
+            buttonData={{
+              name: "bag hide-mobile",
+              icon: <BagIcon />,
+              text: translate.dictionary["loja"],
+              externalLink: true,
+              url: "https://lojapapelparamechas.com.br",
+              hasBg: true,
+            }}
+          />
+        )}
       </Container>
     </S.Header>
   );

@@ -29,7 +29,7 @@ export function MenuMobile({
   defaultFonts,
   setStateMenu,
 }: MenuMobileProps) {
-  const { translate } = useI18n();
+  const { translate, locale } = useI18n();
   const [dropdown, setDropdown] = useState("");
   const router = useRouter();
   const urlPage = router.query.url;
@@ -115,16 +115,18 @@ export function MenuMobile({
             )
           )}
 
-          <Button
-            buttonData={{
-              name: "bag",
-              text: translate.dictionary["loja"],
-              icon: <BagIcon />,
-              externalLink: true,
-              url: "https://lojapapelparamechas.com.br",
-              hasBg: true,
-            }}
-          />
+          {locale === "pt" && (
+            <Button
+              buttonData={{
+                name: "bag",
+                text: translate.dictionary["loja"],
+                icon: <BagIcon />,
+                externalLink: true,
+                url: "https://lojapapelparamechas.com.br",
+                hasBg: true,
+              }}
+            />
+          )}
 
           <div className="border"></div>
 

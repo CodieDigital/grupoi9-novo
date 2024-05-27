@@ -66,15 +66,17 @@ export default function ProductsPage({
           <Launch launchList={pageContent.lancamentos} />
         )}
 
-      <Button
-        buttonData={{
-          url: "https://lojapapelparamechas.com.br/",
-          text: translate.dictionary["acessar-loja"],
-          hasBg: true,
-          name: "loja",
-          externalLink: true,
-        }}
-      />
+      {locale === "pt" && (
+        <Button
+          buttonData={{
+            url: "https://lojapapelparamechas.com.br/",
+            text: translate.dictionary["acessar-loja"],
+            hasBg: true,
+            name: "loja",
+            externalLink: true,
+          }}
+        />
+      )}
     </Layout>
   );
 }

@@ -20,7 +20,7 @@ import {
 import * as S from "./styles";
 
 export function FooterComponent() {
-  const { translate } = useI18n();
+  const { locale, translate } = useI18n();
 
   return (
     <Error name="footer">
@@ -162,21 +162,23 @@ export function FooterComponent() {
               />
             </li>
 
-            <li>
-              <Card
-                type="contact"
-                data={{
-                  url: "https://lojapapelparamechas.com.br",
-                  adress: translate.dictionary["loja"],
-                }}
-                generalProps={{
-                  contactProps: {
-                    color: "#fff",
-                    hoverColor: "var(--bt-linear-gradient-1)",
-                  },
-                }}
-              />
-            </li>
+            {locale === "pt" && (
+              <li>
+                <Card
+                  type="contact"
+                  data={{
+                    url: "https://lojapapelparamechas.com.br",
+                    adress: translate.dictionary["loja"],
+                  }}
+                  generalProps={{
+                    contactProps: {
+                      color: "#fff",
+                      hoverColor: "var(--bt-linear-gradient-1)",
+                    },
+                  }}
+                />
+              </li>
+            )}
 
             <li>
               <Card
