@@ -62,7 +62,7 @@ export function Layout({ noBg, children }: LayoutProps) {
     },
     {
       id: 5,
-      link: "Comunidade",
+      link: "Blog",
       href: "/blog",
     },
     {

@@ -8,7 +8,7 @@ interface ITranslate {
     "sobre-nos": string;
     "a-industria": string;
     portfolio: string;
-    comunidade: string;
+    blog: string;
     distribuidores: string;
     "nossos-distribuidores": string;
     "seja-um-distribuidor": string;

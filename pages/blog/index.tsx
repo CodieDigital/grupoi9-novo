@@ -28,14 +28,14 @@ export default function BlogPage({ blogList, detachList, blogCategories }) {
   return (
     <Layout noBg>
       <Head>
-        <title>{translate.dictionary["comunidade"]}</title>
+        <title>{translate.dictionary["blog"]}</title>
       </Head>
 
       <Error name="Blog">
         <S.BlogPage>
           {blogList && filterList && detachList && (
             <BlogContent
-              title={translate.dictionary["comunidade"]}
+              title={translate.dictionary["blog"]}
               categories={{
                 data: {
                   title: translate.dictionary["filtros"],

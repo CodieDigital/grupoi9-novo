@@ -8,7 +8,7 @@ export const gr: ITranslate = {
     "sobre-nos": "Σχετικά με εμάς",
     "a-industria": "Η βιομηχανία",
     portfolio: "Παρουσίαση Προϊόντων",
-    comunidade: "Άρθρα",
+    blog: "ιστολογίου",
     distribuidores: "Διανομείς",
     "nossos-distribuidores": "Οι διανομείς μας",
     "seja-um-distribuidor": "Γίνετε διανομέας",

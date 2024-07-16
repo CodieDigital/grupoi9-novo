@@ -8,7 +8,7 @@ export const it: ITranslate = {
     "sobre-nos": "Chi siamo",
     "a-industria": "Industria",
     portfolio: "Portfolio",
-    comunidade: "Comunità",
+    blog: "Blog",
     distribuidores: "Distributori",
     "nossos-distribuidores": "I nostri distributori",
     "seja-um-distribuidor": "Diventa un distributore",
