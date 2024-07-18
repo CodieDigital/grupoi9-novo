@@ -23,7 +23,9 @@ export function Objective({ cards }: IObjectiveProps) {
                   data-aos="fade-up"
                   data-aos-duration="1500"
                 >
-                  <h4 className="title-3-medium uppercase">{card.titulo}</h4>
+                  <h4 className="title-3-avianoFlare-medium uppercase">
+                    {card.titulo}
+                  </h4>
                   <p className="paragraph-2 ">{card.descricao}</p>
                 </li>
               ))}
