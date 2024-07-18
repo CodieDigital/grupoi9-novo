@@ -6,19 +6,17 @@ import { useI18n } from "src/contexts/i18n";
 
 import { Layout } from "components/layout";
 import { Banner } from "components/sections/general";
-import { BestProfessionals, Objective } from "components/sections/community";
+import {
+  Artists,
+  Objective,
+  DownloadEbook,
+  BestProfessionals,
+} from "components/sections/community";
 
 import * as S from "styles/pages/community";
 
 export default function Community() {
   const { translate } = useI18n();
-
-  const textCards1 = {
-    id: "campanhas",
-    title: "pageContent && pageContent.tituloCampanha",
-    subtitle: 'translate.dictionary["nossas-campanhas"]',
-    description: "pageContent && pageContent.campanhas",
-  };
 
   const bannerData = {
     id: 1,
@@ -52,6 +50,60 @@ export default function Community() {
     cards: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
   };
 
+  const artistsData = {
+    title: "Artistas",
+    cards: [
+      {
+        titulo: "Marcos santos",
+        subtitulo: "Embaixadora",
+        descricao:
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nos trud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat tempor incididunt.",
+      },
+      {
+        titulo: "Marcos santos",
+        subtitulo: "Embaixadora",
+        descricao:
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nos trud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat tempor incididunt.",
+      },
+      {
+        titulo: "Marcos santos",
+        subtitulo: "Embaixadora",
+        descricao:
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nos trud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat tempor incididunt.",
+      },
+      {
+        titulo: "Marcos santos",
+        subtitulo: "Embaixadora",
+        descricao:
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nos trud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat tempor incididunt.",
+      },
+      {
+        titulo: "Marcos santos",
+        subtitulo: "Embaixadora",
+        descricao:
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nos trud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat tempor incididunt.",
+      },
+      {
+        titulo: "Marcos santos",
+        subtitulo: "Embaixadora",
+        descricao:
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nos trud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat tempor incididunt.",
+      },
+      {
+        titulo: "Marcos santos",
+        subtitulo: "Embaixadora",
+        descricao:
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nos trud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat tempor incididunt.",
+      },
+      {
+        titulo: "Marcos santos",
+        subtitulo: "Embaixadora",
+        descricao:
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nos trud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat tempor incididunt.",
+      },
+    ],
+  };
+
   return (
     <Layout>
       <S.Community>
@@ -67,7 +119,9 @@ export default function Community() {
 
         <BestProfessionals {...bestProfessionalsData} />
 
-        <Artists />
+        <Artists {...artistsData} />
+
+        <DownloadEbook />
       </S.Community>
     </Layout>
   );
