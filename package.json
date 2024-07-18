@@ -14,6 +14,7 @@
     "codiedigital": "3.3.0",
     "codieweb": "^0.1.52",
     "countup.js": "2.5.0",
+    "moment": "^2.30.1",
     "next": "^13.4.4",
     "node": "^16.1.0",
     "react": "^18.2.0",
