@@ -6,7 +6,7 @@ import { useI18n } from "src/contexts/i18n";
 
 import { Layout } from "components/layout";
 import { Banner } from "components/sections/general";
-import { Objective } from "components/sections/community";
+import { BestProfessionals, Objective } from "components/sections/community";
 
 import * as S from "styles/pages/community";
 
@@ -47,6 +47,11 @@ export default function Community() {
     },
   ];
 
+  const bestProfessionalsData = {
+    title: "APRENDA COM OS MELHORES PROFISSIONAIS",
+    cards: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+  };
+
   return (
     <Layout>
       <S.Community>
@@ -59,6 +64,10 @@ export default function Community() {
         />
 
         <Objective cards={objectiveData} />
+
+        <BestProfessionals {...bestProfessionalsData} />
+
+        <Artists />
       </S.Community>
     </Layout>
   );
