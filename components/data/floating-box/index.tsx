@@ -39,8 +39,6 @@ export function BoxFloating({
 
   const counter = differenceInDays * 120000 + number;
 
-  console.log(counter);
-
   return (
     <S.BoxFloating
       className={"box-floating " + modalPosition}
