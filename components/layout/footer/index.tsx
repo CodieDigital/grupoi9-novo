@@ -102,6 +102,22 @@ export function FooterComponent() {
               <Card
                 type="contact"
                 data={{
+                  url: "/comunidade",
+                  adress: translate.dictionary["comunidade"],
+                }}
+                generalProps={{
+                  contactProps: {
+                    color: "#fff",
+                    hoverColor: "var(--bt-linear-gradient-1)",
+                  },
+                }}
+              />
+            </li>
+
+            <li>
+              <Card
+                type="contact"
+                data={{
                   url: "/portfolio",
                   adress: translate.dictionary["portfolio"],
                 }}

@@ -9,6 +9,7 @@ export const gr: ITranslate = {
     "a-industria": "Η βιομηχανία",
     portfolio: "Παρουσίαση Προϊόντων",
     blog: "ιστολογίου",
+    comunidade: "Κοινοτήρια",
     distribuidores: "Διανομείς",
     "nossos-distribuidores": "Οι διανομείς μας",
     "seja-um-distribuidor": "Γίνετε διανομέας",

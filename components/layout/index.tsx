@@ -67,6 +67,11 @@ export function Layout({ noBg, children }: LayoutProps) {
     },
     {
       id: 6,
+      link: "Comunidade",
+      href: "/comunidade",
+    },
+    {
+      id: 7,
       link: "Distribuidores",
       categorias: [
         {
@@ -84,7 +89,7 @@ export function Layout({ noBg, children }: LayoutProps) {
       ],
     },
     {
-      id: 7,
+      id: 8,
       link: "Contato",
       href: "/contato",
     },
