@@ -87,7 +87,7 @@ export function FooterComponent() {
                 type="contact"
                 data={{
                   url: "/blog",
-                  adress: translate.dictionary["comunidade"],
+                  adress: translate.dictionary["blog"],
                 }}
                 generalProps={{
                   contactProps: {
