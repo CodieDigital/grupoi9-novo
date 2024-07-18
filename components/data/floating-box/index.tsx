@@ -12,6 +12,7 @@ import { Close2Icon } from "components/icons";
 import { IBoxFloating } from "./interfaces";
 
 import * as S from "./styles";
+import moment from "moment";
 
 export function BoxFloating({
   numbers,
@@ -29,6 +30,14 @@ export function BoxFloating({
   function handleCloseBox() {
     setOpen(true);
   }
+
+  const targetDate = moment("2024-07-17");
+  const currentDate = moment();
+  const differenceInDays = currentDate.diff(targetDate, "days");
+
+  const number = Number(numbers?.replaceAll(".", ""));
+
+  const counter = differenceInDays * 120000 + number;
 
   return (
     <S.BoxFloating
@@ -49,19 +58,14 @@ export function BoxFloating({
 
       {children && <div className="box-children">{children} </div>}
 
-      {numbers && (
+      {counter && (
         <>
           <div className="paper">
             <NextImage src="/images/cronometro.png" />
           </div>
 
           <div className="box-text">
-            <CountUp
-              separator="."
-              start={0}
-              end={parseFloat(numbers.replace(/\./g, ""))}
-              className="number"
-            />
+            <CountUp separator="." start={0} end={counter} className="number" />
 
             <span
               className=""
